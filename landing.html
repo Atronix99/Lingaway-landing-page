@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingaway - Learn a New Language in the Sky!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">Lingaway</a>
+            <a href="#" class="download-button">Download App</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container hero-content">
+                <p>Transform Your Journey</p>
+                <h1>Learn a New Language in the Sky!</h1>
+                <p class="subtitle">Download Lingaway to master the basics of a language and access personalized learning content for learning anytime you travel.</p>
+                <div class="app-badges">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1280px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1280px-Google_Play_Store_badge_EN.svg.png" alt="Get it on Google Play"></a>
+                </div>
+                <div class="mockup-image">
+                    <img src="https://i.imgur.com/your-main-app-mockup.png" alt="Lingaway App Mockup on Phone">
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <div class="feature-item">
+                    <div class="feature-content feature-left">
+                        <p>Lingaway offers intuitive language learning experience that adapts to your schedule and provides personalized content for learning all the time you travel.</p>
+                    </div>
+                    <div class="feature-content feature-right">
+                        <h3>Learn Anywhere, <br>Even in the Sky</h3>
+                    </div>
+                </div>
+                <div class="app-showcase">
+                    <div class="app-card">
+                        <div class="app-icon-circle">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <p>Essential Travel Phrases</p>
+                        <img src="https://i.imgur.com/your-personalized-learning-mockup.png" alt="Personalized Learning Screenshot">
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon-circle">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <p>Personalized Learning Experience</p>
+                        <img src="https://i.imgur.com/your-engaging-experience-mockup.png" alt="Engaging Experience Screenshot">
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon-circle">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <p>Fully Offline Access</p>
+                        <img src="https://i.imgur.com/your-fully-mobile-mockup.png" alt="Fully Mobile Screenshot">
+                    </div>
+                    <div class="app-card large-text-card">
+                        <div class="large-card-flex">
+                            <h4 class="large-card-left">Effortless language learning for travelers, even without Wi-Fi.</h4>
+                            <p class="large-card-right">Turn travel time into learning time with Lingaway! You can easily master a new language even during long flights or in remote locations without internet access.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <div class="container reviews-content-wrapper">
+                <div class="reviews-header-and-nav">
+                    <div class="reviews-header">
+                        <h2>Customer reviews and feedback from real users.</h2>
+                    </div>
+                    <div class="review-navigation">
+                        <button class="review-nav-button" id="prevReviewBtn"><i class="fas fa-arrow-left"></i></button>
+                        <button class="review-nav-button" id="nextReviewBtn"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="reviews-main-area">
+                    <div class="review-cards" id="reviewCardsContainer">
+                        <div class="review-card" data-review-id="1">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">AJ</div>
+                                <div class="reviewer-details">
+                                    <h5>Anna Jurek</h5>
+                                    <span>Traveler</span>
+                                </div>
+                            </div>
+                            <p class="review-text">"Lingaway is a game changer! I was surprised how quickly I started to understand Spanish. The offline mode is perfect for long flights."</p>
+                        </div>
+                        <div class="review-card" data-review-id="2">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">MB</div>
+                                <div class="reviewer-details">
+                                    <h5>Marek Borowski</h5>
+                                    <span>Student</span>
+                                </div>
+                            </div>
+                            <p class="review-text">"I always struggled with language learning, but Lingaway makes it enjoyable and easy. The interactive lessons are brilliant!"</p>
+                        </div>
+                        <div class="review-card" data-review-id="3">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">KS</div>
+                                <div class="reviewer-details">
+                                    <h5>Katarzyna Sokołowska</h5>
+                                    <span>Business Pro</span>
+                                </div>
+                            </div>
+                            <p class="review-text">"This app is fantastic for anyone on the go. I've been using it during my commutes, and my French has improved immensely. Highly recommend!"</p>
+                        </div>
+                        <div class="review-card" data-review-id="4">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">PT</div>
+                                <div class="reviewer-details">
+                                    <h5>Piotr Kowalski</h5>
+                                    <span>Frequent Flier</span>
+                                </div>
+                            </div>
+                            <p class="review-text">"Never thought I'd learn so much German during my travels. Lingaway makes it so convenient. A must-have for global explorers!"</p>
+                        </div>
+                        <div class="review-card" data-review-id="5">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">JD</div>
+                                <div class="reviewer-details">
+                                    <h5>Julia Dąbrowska</h5>
+                                    <span>Language Enthusiast</span>
+                                </div>
+                            </div>
+                            <p class="review-text">"Lingaway opened up a whole new world for me! The lessons are fun and engaging, and I love being able to practice anywhere."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container cta-card">
+                <div class="cta-card-content">
+                    <p class="cta-top-paragraph">Ready to Transform Your Journey?</p>
+                    <h2>Download Mobile App</h2>
+                    <div class="cta-row">
+                        <div class="cta-buttons-group">
+                            <div class="cta-buttons">
+                                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1280px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store"></a>
+                                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1280px-Google_Play_Store_badge_EN.svg.png" alt="Get it on Google Play"></a>
+                            </div>
+                            <span class="cta-small-text">Download Lingaway &amp; experience new way of learning today!</span>
+                        </div>
+                        <div class="cta-image">
+                            <img src="https://i.imgur.com/your-cta-app-mockup.png" alt="Lingaway App Mockup CTA">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lingaway. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
