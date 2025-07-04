@@ -35,7 +35,6 @@ body {
     line-height: 1.6;
 }
 
-/* Wszystkie główne sekcje mają przezroczyste tło */
 .features-section,
 .reviews-section,
 .cta-section,
@@ -131,11 +130,10 @@ header {
     height: 45px;
     border-radius: 8px;
     transition: transform 0.2s;
-    /* Usunięto białe tło */
-    background: transparent; /* Zmieniono na transparentne */
-    padding: 0; /* Usunięto padding, aby obraz był na krawędzi */
-    border: none; /* Usunięto obramowanie, jeśli było widoczne */
-    box-shadow: none; /* Usunięto cień, jeśli nie jest pożądany na samym obrazie */
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
 }
 .app-badges img:hover { transform: translateY(-5px); }
 .mockup-image {
@@ -462,11 +460,10 @@ header {
     transition: transform 0.2s, box-shadow 0.2s;
     width: auto;
     max-width: 180px;
-    /* Usunięto białe tło */
-    background: transparent; /* Zmieniono na transparentne */
-    padding: 0; /* Usunięto padding, aby obraz był na krawędzi */
-    border: none; /* Usunięto obramowanie, jeśli było widoczne */
-    box-shadow: none; /* Usunięto cień, jeśli nie jest pożądany na samym obrazie */
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
 }
 .cta-buttons img:hover {
     box-shadow: 0 8px 24px rgba(44, 95, 45, 0.18);

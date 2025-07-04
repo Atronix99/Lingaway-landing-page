@@ -4,11 +4,11 @@ const nextReviewBtn = document.getElementById('nextReviewBtn');
 const reviewCards = Array.from(reviewCardsContainer.children);
 
 let currentIndex = 0;
-const visibleCards = 1; // przesuwaj o jeden komentarz
+const visibleCards = 1;
 
 function updateReviews() {
     const cardWidth = reviewCards[0].offsetWidth;
-    const gap = 30; // taki jak w CSS .review-cards
+    const gap = 30;
     const moveX = (cardWidth + gap) * currentIndex;
     reviewCardsContainer.style.transition = 'transform 0.6s cubic-bezier(.77,0,.18,1)';
     reviewCardsContainer.style.transform = `translateX(-${moveX}px)`;
@@ -18,7 +18,7 @@ function updateReviews() {
 prevReviewBtn.addEventListener('click', () => {
     currentIndex -= 1;
     if (currentIndex < 0) {
-        currentIndex = reviewCards.length - 2; // zostaw dwa na końcu
+        currentIndex = reviewCards.length - 2;
     }
     updateReviews();
 });
