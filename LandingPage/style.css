@@ -1,0 +1,105 @@
+body{
+    background: linear-gradient(135deg, #C8EDC5 0%, #C8EDC5 70%, #fff 100%);
+}
+
+.feature-gap-icon {
+    transform: rotate(90deg);
+}
+
+.reviewer-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #3ec6b8 60%, #7ee8a5 100%);
+    box-shadow: 0 2px 8px rgba(62, 198, 184, 0.13);
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #374151;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .reviewer-avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 14px;
+    }
+}
+
+.mockup-image {
+    position: relative;
+    display: inline-block;
+    padding: 3px;
+}
+
+.mockup-image img {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.mockup-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35%;
+    min-height: 120px;
+    /* background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(255, 255, 255, 0.7) 20%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgb(255, 255, 255) 80%,
+            rgb(255, 255, 255) 100%
+    ); */
+    z-index: 2;
+    pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .mockup-image::after {
+        min-height: 160px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .mockup-image::after {
+        min-height: 200px;
+    }
+}
+
+/* Smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #3ab18b;
+    outline-offset: 2px;
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 768px) {
+    button,
+    a[href] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+.Download:hover{
+    box-shadow: 0 8px 24px rgba(44, 95, 45, 0.18);
+    transform: translateY(-3px) scale(1.04);
+}
+.Download{
+    transition: transform 0.2s, box-shadow 0.2s;
+}
