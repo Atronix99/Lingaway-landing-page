@@ -1,76 +1,84 @@
-// Review cards carousel functionality with improved mobile support
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.review-card');
     const prevBtn = document.getElementById('prevReviewBtn');
     const nextBtn = document.getElementById('nextReviewBtn');
-    const container = document.getElementById('reviewCardsContainer');
+    const reviewCardsContainer = document.getElementById('reviewCardsContainer');
+    const carouselStatus = document.getElementById('carousel-status');
     let currentIndex = 0;
+
+    if (!reviewCardsContainer || !prevBtn || !nextBtn || cards.length === 0 || !carouselStatus) {
+        return;
+    }
 
     function getCardsPerView() {
         const width = window.innerWidth;
-        if (width < 768) return 1;  // Mobile: 1 card
-        if (width < 1024) return 1; // Tablet: 1 card
-        return 2; // Desktop: 2 cards
+        if (width < 768) return 1;
+        if (width < 1024) return 1;
+        return 2;
     }
 
-    function showCards() {
+    function showCards(focusOnCard = false) {
         const cardsPerView = getCardsPerView();
+        const totalCards = cards.length;
 
         cards.forEach((card, index) => {
-            card.classList.add('hidden');
-            if (index >= currentIndex && index < currentIndex + cardsPerView && index < cards.length) {
-                card.classList.remove('hidden');
-            }
+            const isVisible = index >= currentIndex && index < currentIndex + cardsPerView;
+            card.classList.toggle('hidden', !isVisible);
+            card.setAttribute('aria-hidden', !isVisible);
+            card.tabIndex = isVisible ? 0 : -1;
         });
 
-        // Update button states
         prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex + cardsPerView >= cards.length;
+        nextBtn.disabled = currentIndex + cardsPerView >= totalCards;
 
-        // Update button opacity for better visual feedback
-        if (prevBtn.disabled) {
-            prevBtn.classList.add('opacity-50');
+        prevBtn.classList.toggle('opacity-50', prevBtn.disabled);
+        nextBtn.classList.toggle('opacity-50', nextBtn.disabled);
+
+        let statusText = '';
+        if (cardsPerView === 1) {
+            statusText = `Review ${currentIndex + 1} of ${totalCards}`;
         } else {
-            prevBtn.classList.remove('opacity-50');
+            const lastVisibleIndex = Math.min(currentIndex + cardsPerView, totalCards);
+            statusText = `Reviews ${currentIndex + 1} to ${lastVisibleIndex} of ${totalCards}`;
         }
+        carouselStatus.textContent = statusText;
 
-        if (nextBtn.disabled) {
-            nextBtn.classList.add('opacity-50');
-        } else {
-            nextBtn.classList.remove('opacity-50');
+        if (focusOnCard) {
+            const firstVisibleCard = document.querySelector('.review-card:not(.hidden)');
+            if (firstVisibleCard) {
+                firstVisibleCard.focus();
+            }
         }
     }
 
-    function goToPrev() {
+    function goToPrev(event = null) {
         const cardsPerView = getCardsPerView();
-        if (currentIndex > 0) {
-            currentIndex -= cardsPerView;
-            if (currentIndex < 0) currentIndex = 0;
-            showCards();
-        }
+        currentIndex = Math.max(0, currentIndex - cardsPerView);
+        showCards(event !== null);
     }
 
-    function goToNext() {
+    function goToNext(event = null) {
         const cardsPerView = getCardsPerView();
         if (currentIndex + cardsPerView < cards.length) {
             currentIndex += cardsPerView;
-            showCards();
+            if (currentIndex + cardsPerView > cards.length) {
+                currentIndex = cards.length - cardsPerView;
+            }
         }
+        showCards(event !== null);
     }
 
-    // Event listeners
     prevBtn.addEventListener('click', goToPrev);
     nextBtn.addEventListener('click', goToNext);
 
-    // Touch/swipe support for mobile
     let startX = 0;
     let endX = 0;
 
-    container.addEventListener('touchstart', (e) => {
+    reviewCardsContainer.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
     }, { passive: true });
 
-    container.addEventListener('touchend', (e) => {
+    reviewCardsContainer.addEventListener('touchend', (e) => {
         endX = e.changedTouches[0].clientX;
         handleSwipe();
     }, { passive: true });
@@ -81,21 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (Math.abs(difference) > minSwipeDistance) {
             if (difference > 0) {
-                // Swipe left - go to next
                 goToNext();
             } else {
-                // Swipe right - go to previous
                 goToPrev();
             }
         }
     }
 
-    // Handle window resize with debouncing
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            // Reset to first card on significant resize to avoid layout issues
             const newCardsPerView = getCardsPerView();
             if (currentIndex + newCardsPerView > cards.length) {
                 currentIndex = Math.max(0, cards.length - newCardsPerView);
@@ -104,17 +108,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 250);
     });
 
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
             e.preventDefault();
-            goToPrev();
+            goToPrev(e);
         } else if (e.key === 'ArrowRight') {
             e.preventDefault();
-            goToNext();
+            goToNext(e);
         }
     });
 
-    // Initialize
     showCards();
 });

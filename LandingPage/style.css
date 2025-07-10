@@ -1,5 +1,7 @@
-body{
+body {
+    min-height: 100vh;
     background: linear-gradient(135deg, #C8EDC5 0%, #C8EDC5 70%, #fff 100%);
+    background-attachment: fixed;
 }
 
 .feature-gap-icon {
@@ -52,14 +54,14 @@ body{
     right: 0;
     height: 35%;
     min-height: 120px;
-    /* background: linear-gradient(
-            to bottom,
-            transparent 0%,
-            rgba(255, 255, 255, 0.7) 20%,
-            rgba(255, 255, 255, 0.8) 50%,
-            rgb(255, 255, 255) 80%,
-            rgb(255, 255, 255) 100%
-    ); */
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 255, 255, 0.7) 20%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgb(255, 255, 255) 80%,
+        rgb(255, 255, 255) 100%
+    );
     z-index: 2;
     pointer-events: none;
 }
@@ -76,19 +78,16 @@ body{
     }
 }
 
-/* Smooth scrolling for better UX */
 html {
     scroll-behavior: smooth;
 }
 
-/* Focus styles for accessibility */
 button:focus-visible,
 a:focus-visible {
     outline: 2px solid #3ab18b;
     outline-offset: 2px;
 }
 
-/* Improved touch targets for mobile */
 @media (max-width: 768px) {
     button,
     a[href] {
@@ -96,10 +95,71 @@ a:focus-visible {
         min-width: 44px;
     }
 }
-.Download:hover{
+
+.btn-download,
+.btn-store {
+    transform: translateY(0); 
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.btn-download:hover,
+.btn-store:hover {
     box-shadow: 0 8px 24px rgba(44, 95, 45, 0.18);
     transform: translateY(-3px) scale(1.04);
 }
-.Download{
-    transition: transform 0.2s, box-shadow 0.2s;
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-download,
+    .btn-store {
+        transition: none;
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.review-card > div.p-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .review-card > div.p-4 {
+        gap: 1rem;
+    }
+}
+
+.review-card .p-4 > div:first-child {
+    margin-bottom: 0 !important; 
+}
+
+.feature-icon-circle {
+    width: 64px;
+    height: 64px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 1rem;
+}
+
+@media (max-width: 1023px) { 
+    .feature-icon-circle {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
 }
