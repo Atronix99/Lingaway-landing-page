@@ -5,8 +5,8 @@ tailwind.config = {
               poppins: ["Poppins", "sans-serif"],
             },
             colors: {
-              "lingaway-primary": "#4CAF50",
-              "lingaway-light": "#F2F8F2",
+              "lingaway-primary": "#6FC568",
+              "lingaway-light": "#F6F6F6",
             },
             fontSize: {
               "18px": "1.125rem",

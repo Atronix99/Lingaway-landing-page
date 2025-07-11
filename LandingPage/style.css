@@ -250,25 +250,25 @@ a:focus-visible {
 }
 
 .cta-heading-group {
-    display: flex; /* Sprawia, że kontener jest flexboxem */
-    align-items: flex-start; /* **Kluczowa zmiana:** Wyrównuje elementy do góry kontenera flex */
-    justify-content: center; /* Wyśrodkowanie poziome dla mniejszych ekranów */
-    gap: 1rem; /* Dodaje odstęp między h2 a kółkiem */
-    margin-bottom: 1.5rem; /* Steruje odstępem poniżej całej grupy nagłówka */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   @media (min-width: 1024px) {
     .cta-heading-group {
-      justify-content: flex-start; /* Wyrównanie do lewej dla większych ekranów */
+      justify-content: flex-start;
     }
   }
 
 /* ZMODYFIKOWANE STYLE PRZYCISKÓW SWIPER */
 .swiper-button-prev-custom,
 .swiper-button-next-custom {
-    width: 60px !important; /* Dodano !important */
-    height: 60px !important; /* Dodano !important */
-    background-color: #6fc568 !important; /* Dodano !important */
+    width: 60px !important;
+    height: 60px !important;
+    background-color: #6fc568 !important;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -289,8 +289,13 @@ a:focus-visible {
     color: white;
 }
 @media (max-width: 767px) {
+  .gradient-bg {
+    transform: translate(-50%, -50%);
+    position: fixed;
+  }
   .gradient-bg > div {
-    background: white !important; /* Białe tło dla wszystkich gradientów na wersji mobilnej */
+    background: white !important;
+    filter: blur(3rem);
   }
   .no-wrap-wifi {
     white-space: nowrap;
