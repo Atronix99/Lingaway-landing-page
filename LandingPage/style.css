@@ -1,0 +1,298 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.text-50px {
+  font-size: 50px;
+}
+
+.text-40px {
+  font-size: 40px;
+}
+
+.text-38px {
+  font-size: 38px;
+}
+
+.text-36px {
+  font-size: 36px;
+}
+
+.text-24px {
+  font-size: 24px;
+}
+
+.text-20px {
+  font-size: 20px;
+}
+
+.text-18px {
+  font-size: 18px;
+}
+
+/* Nowe style dodane/zmodyfikowane */
+:root {
+    --bg-feature-2-color: rgba(200, 237, 197, 0.58); /* #C8EDC5 z 58% przezroczystości */
+}
+
+.feature-gap-icon {
+    transform: rotate(90deg);
+}
+
+.reviewer-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #6fc568 60%, white 100%);
+    box-shadow: 0 2px 8px rgba(62, 198, 184, 0.13);
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #374151;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .reviewer-avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 14px;
+    }
+}
+
+.mockup-image {
+    position: relative;
+    display: inline-block;
+    padding: 3px;
+}
+
+.mockup-image img {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.mockup-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35%;
+    min-height: 120px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 255, 255, 0.7) 20%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgb(255, 255, 255) 80%,
+        rgb(255, 255, 255) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+.swiper-slide:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .mockup-image::after {
+        min-height: 160px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .mockup-image::after {
+        min-height: 200px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #3ab18b;
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    button,
+    a[href] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+.btn-download,
+.btn-store {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  border: 3px solid #D1D5DB;
+}
+
+.btn-download:hover,
+.btn-store:hover {
+  box-shadow: 0 8px 24px rgba(44, 95, 45, 0.18);
+  transform: translateY(-3px) scale(1.04);
+}
+
+.btn-store img {
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-store:hover img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-download,
+  .btn-store,
+  .btn-store img {
+    transition: none;
+    transform: none;
+    box-shadow: none;
+  }
+  .btn-download:hover,
+  .btn-store:hover {
+    background-color: black;
+  }
+}
+
+.swiper-wrapper {
+    padding: 8px !important;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.review-card > div.p-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: none; /* Usunięto cień z kart komentarzy */
+}
+
+@media (min-width: 768px) {
+    .review-card > div.p-4 {
+        gap: 1rem;
+    }
+}
+
+.review-card .p-4 > div:first-child {
+    margin-bottom: 0 !important;
+}
+
+.feature-icon-circle {
+    width: 64px;
+    height: 64px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 1rem;
+}
+
+@media (max-width: 1023px) {
+    .feature-icon-circle {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+.down-icon-circle {
+    width: 64px;
+    height: 64px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 1rem;
+}
+
+@media (max-width: 1023px) {
+    .down-icon-circle {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+.cta-heading-group {
+    display: flex; /* Sprawia, że kontener jest flexboxem */
+    align-items: flex-start; /* **Kluczowa zmiana:** Wyrównuje elementy do góry kontenera flex */
+    justify-content: center; /* Wyśrodkowanie poziome dla mniejszych ekranów */
+    gap: 1rem; /* Dodaje odstęp między h2 a kółkiem */
+    margin-bottom: 1.5rem; /* Steruje odstępem poniżej całej grupy nagłówka */
+  }
+
+  @media (min-width: 1024px) {
+    .cta-heading-group {
+      justify-content: flex-start; /* Wyrównanie do lewej dla większych ekranów */
+    }
+  }
+
+/* ZMODYFIKOWANE STYLE PRZYCISKÓW SWIPER */
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+    width: 60px !important; /* Dodano !important */
+    height: 60px !important; /* Dodano !important */
+    background-color: #6fc568 !important; /* Dodano !important */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.swiper-button-prev-custom.swiper-button-disabled,
+.swiper-button-next-custom.swiper-button-disabled {
+    opacity: 0.46;
+    cursor: not-allowed;
+}
+
+.swiper-button-prev-custom::after,
+.swiper-button-next-custom::after {
+    font-size: 24px;
+    color: white;
+}
+@media (max-width: 767px) {
+  .gradient-bg > div {
+    background: white !important; /* Białe tło dla wszystkich gradientów na wersji mobilnej */
+  }
+  .no-wrap-wifi {
+    white-space: nowrap;
+  }
+}
