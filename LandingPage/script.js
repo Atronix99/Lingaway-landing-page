@@ -34,9 +34,9 @@ AOS.init({
           },
           breakpoints: {
             640: {
-              slidesPerView: 'auto', // Pozwoli Swiperowi obliczyć ile kart się zmieści
-              spaceBetween: 24, // Zwiększony odstęp dla lepszego wyglądu
-              centeredSlides: false, // Wyłączenie centrowania, gdy jest więcej niż 1 slajd
+              slidesPerView: 'auto',
+              spaceBetween: 24,
+              centeredSlides: false, 
             },
             768: {
               slidesPerView: 'auto',

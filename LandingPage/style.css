@@ -38,9 +38,8 @@ body {
   font-size: 18px;
 }
 
-/* Nowe style dodane/zmodyfikowane */
 :root {
-    --bg-feature-2-color: rgba(200, 237, 197, 0.58); /* #C8EDC5 z 58% przezroczystości */
+    --bg-feature-2-color: rgba(200, 237, 197, 0.58);
 }
 
 .feature-gap-icon {
@@ -85,40 +84,20 @@ body {
     z-index: 1;
 }
 
-.mockup-image::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 35%;
-    min-height: 120px;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(255, 255, 255, 0.7) 20%,
-        rgba(255, 255, 255, 0.8) 50%,
-        rgb(255, 255, 255) 80%,
-        rgb(255, 255, 255) 100%
-    );
-    z-index: 2;
-    pointer-events: none;
+.mockup-image img {
+  display: block;
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+}
+
+.mockup-image {
+    position: relative;
+    display: inline-block;
+    padding: 3px;
 }
 
 .swiper-slide:hover {
     cursor: pointer;
-}
-
-@media (min-width: 768px) {
-    .mockup-image::after {
-        min-height: 160px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .mockup-image::after {
-        min-height: 200px;
-    }
 }
 
 html {
@@ -198,7 +177,7 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    box-shadow: none; /* Usunięto cień z kart komentarzy */
+    box-shadow: none;
 }
 
 @media (min-width: 768px) {
@@ -263,7 +242,6 @@ a:focus-visible {
     }
   }
 
-/* ZMODYFIKOWANE STYLE PRZYCISKÓW SWIPER */
 .swiper-button-prev-custom,
 .swiper-button-next-custom {
     width: 60px !important;
@@ -296,6 +274,8 @@ a:focus-visible {
   .gradient-bg > div {
     background: white !important;
     filter: blur(3rem);
+    transform: translateZ(0);
+    will-change: transform, opacity;
   }
   .no-wrap-wifi {
     white-space: nowrap;
