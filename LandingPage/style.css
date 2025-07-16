@@ -100,6 +100,11 @@ body {
     cursor: pointer;
 }
 
+/* Added to fix horizontal scroll issue */
+.reviewSwiper {
+    overflow: hidden;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -239,6 +244,14 @@ a:focus-visible {
   @media (min-width: 1024px) {
     .cta-heading-group {
       justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .cta-heading-group {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
   }
 
