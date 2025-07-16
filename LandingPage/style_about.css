@@ -1,0 +1,18 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('photos/gradient.png');
+    background-size: cover;
+}
+
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+.last-section {
+  clip-path: url(#wave-indentation-path);
+  padding-top: 50px;
+}
