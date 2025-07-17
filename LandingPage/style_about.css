@@ -16,3 +16,10 @@ body {
   clip-path: url(#wave-indentation-path);
   padding-top: 50px;
 }
+.photo img {
+	display: block;
+	position: relative;
+	z-index: 1;
+	-webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+	mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+}
