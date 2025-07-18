@@ -103,22 +103,10 @@ body {
     overflow: hidden;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 button:focus-visible,
 a:focus-visible {
     outline: 2px solid #3ab18b;
     outline-offset: 2px;
-}
-
-@media (max-width: 768px) {
-    button,
-    a[href] {
-        min-height: 44px;
-        min-width: 44px;
-    }
 }
 
 .btn-download,
@@ -144,20 +132,6 @@ a:focus-visible {
 
 .btn-store:hover img {
     transform: scale(1.04);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .btn-download,
-    .btn-store,
-    .btn-store img {
-        transition: none;
-        transform: none;
-        box-shadow: none;
-    }
-    .btn-download:hover,
-    .btn-store:hover {
-        background-color: black;
-    }
 }
 
 .sr-only {

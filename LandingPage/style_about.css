@@ -26,3 +26,23 @@ body {
 .section-z-wcieciem {
   clip-path: url(#moje-wciecie);
 }
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #3ab18b;
+    outline-offset: 2px;
+}
+
+.btn-download{
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    border: 3px solid #d1d5db;
+}
+
+.btn-download:hover{
+    box-shadow: 0 8px 24px rgba(44, 95, 45, 0.18);
+    transform: translateY(-3px) scale(1.04);
+}
